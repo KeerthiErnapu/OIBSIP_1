@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book Details</title>
+    <style>
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .book {
+            width: 30%;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .book img {
+            max-width: 100%;
+            max-height: 150px;
+        }
+        .btn{
+            height:35px;
+            width:100px;
+            font-size:18px;
+            margin:5px;
+        }
+        input{
+            width:250px;
+            height:25px;
+            text-align: center;
+            margin:10px;
+        }
+        button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <h1>Let's Explore...</h1>
+    <form id="search-form">
+        <center>
+        <label for="search">Search for a Book:</label>
+        <input type="text" id="search" name="search" placeholder="Enter book title">
+        <button type="button" class="btn" onclick="searchBooks()">Search</button>
+        </center>
+    </form>
+
+    <div class="book-container">
+        <div class="book">
+            <img src="book1.jpg" alt="Book 1 Cover">
+            <h2>Gently Falls The Bakula</h2>
+            <p>Sudha Murthy</p>
+            <p>$19.99</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="book2.jpg" alt="Book 2 Cover">
+            <h2>Secret Garden</h2>
+            <p>Frances Hogson Barnett </p>
+            <p>$24.99</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="book3.jpg" alt="Book 3 Cover">
+            <h2>Peter Pan</h2>
+            <p>J.M.Barrie</p>
+            <p>$29.99</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="book4.jpg" alt="Book 1 Cover">
+            <h2>Things We Left Behind</h2>
+            <p>Lucy Score</p>
+            <p>$19.99</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="book5.jpg" alt="Book 2 Cover">
+            <h2>The Secret</h2>
+            <p>Susan Vincon</p>
+            <p>$24.99</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="book6.jpg" alt="Book 3 Cover">
+            <h2>We Are Called To Rise</h2>
+            <p>Laura MC Bridge</p>
+            <p>$29.99</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="book7.jpeg" alt="Book 1 Cover">
+            <h2>Wings Of Fire</h2>
+            <p>APJ Abdul Kalam</p>
+            <p>$39.99</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="book8.jpg" alt="Book 2 Cover">
+            <h2>Othello</h2>
+            <p>William Shakespear</p>
+            <p>$24.99</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        <div class="book">
+            <img src="book9.jpg" alt="Book 3 Cover">
+            <h2>The Diary Of An Young Girl</h2>
+            <p>Anne Frank</p>
+            <p>$35.90</p>
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+        
+    </div>
+
+    <script>
+          function addToCart() {
+        
+        alert('Book added to cart!');
+    }
+        const books = [
+            { title: "Gently Falls The Bakula", author: "Sudha Murthy", price: "$19.99", imgSrc: "book1.jpg" },
+            { title: "Peter Pan", author: "J.M.Barrie", price: "$24.99", imgSrc: "book3.jpg" },
+            { title: "Wings Of Fire", author: "APJ Abdul Kalam", price: "$39.99", imgSrc: "book2.jpg" },
+            { title: "The Diary Of An Young Girl", author: "Anne Frank", price: "$35.90", imgSrc: "book2.jpg" },
+            { title: "Wings Of Fire", author: "APJ Abdul Kalam", price: "$39.99", imgSrc: "book2.jpg" },
+            { title: "Wings Of Fire", author: "APJ Abdul Kalam", price: "$39.99", imgSrc: "book2.jpg" },
+        ];
+
+        function searchBooks() {
+            const searchTerm = document.getElementById("search").value.toLowerCase();
+            const bookContainer = document.querySelector(".book-container");
+            bookContainer.innerHTML = "";
+
+            books.forEach((book) => {
+                if (book.title.toLowerCase().includes(searchTerm)) {
+                    const bookDiv = document.createElement("div");
+                    bookDiv.className = "book";
+                    bookDiv.innerHTML = `
+                        <img src="${book.imgSrc}" alt="${book.title} Cover">
+                        <h2>${book.title}</h2>
+                        <p>${book.author}</p>
+                        <p>${book.price}</p>
+                    `;
+                    bookContainer.appendChild(bookDiv);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
