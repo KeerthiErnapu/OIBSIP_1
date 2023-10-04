@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Landing Page</title>
+    <style>
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0; 
+    z-index: 100;
+}
+
+.book {
+    background-color: white;
+    border: 1px solid #ddd;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.book img{
+    width:250px;
+    height:250px;
+}
+button:hover {
+    background-color: #555;
+}
+p{
+    padding:3px;
+}
+a{
+    text-decoration:none;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Bookstore</h1>
+        <p>Explore our collection of great books.</p>
+    </header><br><br><br><br>
+    
+    <section class="book">
+        <img src="book1.jpg" alt="Book Cover">
+        <h2>Gently Falls The Bakula</h2>
+        <p>Author:Sudha Murthy</p>
+        <p>Price: $19.99</p>
+        <button onclick="addToCart()">Add to Cart</button>
+    </section>
+    
+    <section class="book">
+        <img src="book2.jpg" alt="Book Cover">
+        <h2>The Secret Graden</h2>
+        <p>Author:Frances Hogson Burnett</p>
+        <p>Price: $24.99</p>
+        <button onclick="addToCart()">Add to Cart</button>
+    </section>
+    <section class="book">
+        <img src="book3.jpg" alt="Book Cover">
+        <h2>Peter Pan</h2>
+        <p>Author:J.M.Barrie</p>
+        <p>Price: $24.99</p>
+        <button onclick="addToCart()">Add to Cart</button>
+    </section>
+    <section class="book">
+        <img src="book4.jpg" alt="Book Cover">
+        <h2>Things We Left Behind</h2>
+        <p>Author:Lucy Score</p>
+        <p>Price: $24.99</p>
+        <button onclick="addToCart()">Add to Cart</button>
+    </section>
+    <section class="book">
+        <img src="book5.jpg" alt="Book Cover">
+        <h2>The Silence</h2>
+        <p>Author:Susan Vincon</p>
+        <p>Price: $24.99</p>
+        <button onclick="addToCart()">Add to Cart</button><br><br>
+        <a href="seemore.html">See more...</a>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 Bookstore</p>
+    </footer>
+    <script>
+        function addToCart() {
+        
+            alert('Book added to cart!');
+        }
+    </script>
+</body>
+</html>
